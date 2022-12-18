@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvelasqu <lvelasqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 19:49:27 by lvelasqu          #+#    #+#             */
-/*   Updated: 2022/12/16 18:04:56 by lvelasqu         ###   ########.fr       */
+/*   Created: 2022/12/16 17:55:18 by lvelasqu          #+#    #+#             */
+/*   Updated: 2022/12/16 18:02:31 by lvelasqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	while (lst)
+	t_list	*aux;
+
+	aux = *lst;
+	if (lst || *lst)
 	{
-		if (!lst->next)
-			return (lst);
-		lst = lst->next;
+		while (*lst)
+		{
+			*lst = aux->next;
+			del(aux->content);
+			free(aux);
+			aux = *lst;
+		}
 	}
-	return (lst);
 }
