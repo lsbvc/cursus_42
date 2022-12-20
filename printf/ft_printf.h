@@ -6,7 +6,7 @@
 /*   By: lvelasqu <lvelasqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 12:45:54 by lvelasqu          #+#    #+#             */
-/*   Updated: 2022/12/20 14:19:05 by lvelasqu         ###   ########.fr       */
+/*   Updated: 2022/12/20 17:07:18 by lvelasqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 /* Function prototypes */
 
+int	ft_putchar(int a);
 int	ft_printf(const char *str, ...);
-int	ft_unit_test(char const *str, va_list obj);
 
 #endif
