@@ -6,32 +6,31 @@
 /*   By: lvelasqu <lvelasqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 12:49:41 by lvelasqu          #+#    #+#             */
-/*   Updated: 2022/12/20 20:41:08 by lvelasqu         ###   ########.fr       */
+/*   Updated: 2023/01/12 23:20:03 by lvelasqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_unit_test(const char *str, va_list obj)
+int	ft_unit_test(va_list obj, const char str, int count)
 {
-	int	unit;
-
-	unit = 0;
 	if (str == 'c')
-		ft_putchar(va_arg(obj, int));
+		count += ft_putchar(va_arg(obj, int));
 	else if (str == 's')
-		ft_putstr(va_arg(obj, char *));
+		count += ft_putstr(va_arg(obj, char *));
 	else if (str == 'p')
-		ft_putptr(va_arg(obj, uintptr_t));
-	else if (str == 'd' || str == 'i')
+		count += ft_putptr(va_arg(obj, unsigned long));
+	/*else if (str == 'd' || str == 'i')
 		ft_putdec(va_arg(obj, int));
 	else if (str == 'u')
-		ft_putnbr(va_arg(obj, unsigned int));
-	else if (str == 'x' || str == 'X')
-		ft_puthex(va_arg(obj, unsigned int));
+		ft_putnbr(va_arg(obj, unsigned int));*/
+	else if (str == 'x')
+		count += ft_puthex(va_arg(obj, uintptr_t), 0);
+	else if (str == 'X')
+		count += ft_puthex(va_arg(obj, uintptr_t), 1);
 	else if (str == '%')
-		ft_putchar(va_arg(obj, int));
-	return (unit);
+		count += ft_putchar('%');
+	return (count);
 }
 
 int	ft_printf(const char *str, ...)
@@ -39,9 +38,25 @@ int	ft_printf(const char *str, ...)
 	int			unit;
 	int			i;
 	va_list		args;
+	int			count;
 
 	va_start(args, str);
-
-	if ()
+	unit = 0;
+	i = 0;
+	count = 0;
+	while (str[i])
+	{
+		if (str[i] == '%')
+		{
+			unit += ft_unit_test(args, str[i + 1], count);
+			i++;
+		}
+		else
+		{
+			unit += ft_putchar(str[i]);
+		}
+		i++;
+	}
 	va_end(args);
+	return (unit);
 }

@@ -6,7 +6,7 @@
 #    By: lvelasqu <lvelasqu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 12:29:27 by lvelasqu          #+#    #+#              #
-#    Updated: 2022/12/20 12:44:09 by lvelasqu         ###   ########.fr        #
+#    Updated: 2023/01/12 21:02:23 by lvelasqu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libftprintf.a
 
 LIB = ar rcs
 
-SRC = 	  
+SRC = ft_puts.c ft_printf.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -34,13 +34,15 @@ $(NAME): $(OBJ)
 
 clean:
 	$(RM) $(OBJ)
+
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all 
 
-comp: 
-	$(CC) $(CFLAGS) ft_strnstr.c ft_strlen.c
+comp: main.c ${NAME}
+	@$(CC) $(CFLAGS) main.c ${NAME} -o test
+	@./test
 
 .PHONY: all clean fclean re comp
 
