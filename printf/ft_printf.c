@@ -6,7 +6,7 @@
 /*   By: lvelasqu <lvelasqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 12:49:41 by lvelasqu          #+#    #+#             */
-/*   Updated: 2023/01/12 23:20:03 by lvelasqu         ###   ########.fr       */
+/*   Updated: 2023/01/14 15:33:38 by lvelasqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ int	ft_unit_test(va_list obj, const char str, int count)
 		count += ft_putstr(va_arg(obj, char *));
 	else if (str == 'p')
 		count += ft_putptr(va_arg(obj, unsigned long));
-	/*else if (str == 'd' || str == 'i')
-		ft_putdec(va_arg(obj, int));
+	else if (str == 'd' || str == 'i')
+		count += ft_putnbr(va_arg(obj, int));
 	else if (str == 'u')
-		ft_putnbr(va_arg(obj, unsigned int));*/
+		count += ft_putnbr2(va_arg(obj, unsigned int));
 	else if (str == 'x')
-		count += ft_puthex(va_arg(obj, uintptr_t), 0);
+		count += ft_puthex(va_arg(obj, unsigned int), 0);
 	else if (str == 'X')
-		count += ft_puthex(va_arg(obj, uintptr_t), 1);
+		count += ft_puthex(va_arg(obj, unsigned int), 1);
 	else if (str == '%')
 		count += ft_putchar('%');
 	return (count);

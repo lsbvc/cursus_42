@@ -6,7 +6,7 @@
 #    By: lvelasqu <lvelasqu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 12:29:27 by lvelasqu          #+#    #+#              #
-#    Updated: 2023/01/12 21:02:23 by lvelasqu         ###   ########.fr        #
+#    Updated: 2023/01/14 15:31:54 by lvelasqu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libftprintf.a
 
 LIB = ar rcs
 
-SRC = ft_puts.c ft_printf.c
+SRC = ft_puts.c ft_printf.c ft_putdec.c
 
 OBJ = $(SRC:.c=.o)
 

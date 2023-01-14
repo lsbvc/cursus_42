@@ -6,7 +6,7 @@
 /*   By: lvelasqu <lvelasqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 18:22:28 by lvelasqu          #+#    #+#             */
-/*   Updated: 2023/01/12 23:19:56 by lvelasqu         ###   ########.fr       */
+/*   Updated: 2023/01/14 15:22:47 by lvelasqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ int	ft_putptr(unsigned long ptr)
 	return (i);
 }
 
-int	ft_puthex(uintptr_t num, int capital)
+int	ft_puthex(unsigned long long num, int capital)
 {
-	uintptr_t	i;
+	unsigned long long	i;
 
 	i = 0;
 	if (num >= 16)
@@ -60,9 +60,3 @@ int	ft_puthex(uintptr_t num, int capital)
 	i++;
 	return (i);
 }
-/*
-int	ft_putdec(int nb)
-{
-	
-}
-*/
