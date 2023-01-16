@@ -6,7 +6,7 @@
 /*   By: lvelasqu <lvelasqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 14:42:29 by lvelasqu          #+#    #+#             */
-/*   Updated: 2022/12/18 14:12:22 by lvelasqu         ###   ########.fr       */
+/*   Updated: 2023/01/16 22:54:53 by lvelasqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
 // concatenate two strings into a new string (with malloc).
 char	*ft_strjoin(char const *s1, char const *s2);
-// split string, with specified character as delimiter,an array of strings.
+// split string, with specified character as delimiter, an array of strings.
 char	**ft_split(char const *s, char c);
 // create new string from modifying string with specified function.
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));

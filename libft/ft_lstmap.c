@@ -6,7 +6,7 @@
 /*   By: lvelasqu <lvelasqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 18:31:35 by lvelasqu          #+#    #+#             */
-/*   Updated: 2022/12/16 18:33:38 by lvelasqu         ###   ########.fr       */
+/*   Updated: 2023/01/16 20:39:44 by lvelasqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			return (NULL);
 		}
 		ft_lstadd_back(&result, aux);
-		aux = aux->next;
 		lst = lst->next;
 	}
 	return (result);

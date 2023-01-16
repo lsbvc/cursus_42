@@ -6,7 +6,7 @@
 /*   By: lvelasqu <lvelasqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:30:33 by lvelasqu          #+#    #+#             */
-/*   Updated: 2022/12/09 16:48:52 by lvelasqu         ###   ########.fr       */
+/*   Updated: 2023/01/16 23:32:16 by lvelasqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strdup(const char *str)
 
 	len = ft_strlen (str) + 1;
 	new = malloc (len);
-	if (new == 0)
+	if (!new)
 		return (0);
 	ft_memcpy (new, str, len);
 	return ((char *) new);

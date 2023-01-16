@@ -6,7 +6,7 @@
 /*   By: lvelasqu <lvelasqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 18:36:00 by lvelasqu          #+#    #+#             */
-/*   Updated: 2022/12/14 18:45:38 by lvelasqu         ###   ########.fr       */
+/*   Updated: 2023/01/17 00:01:31 by lvelasqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	{
 		while (*s)
 		{
-			f(i, &*s);
+			f(i, s);
 			i++;
 			s++;
 		}
