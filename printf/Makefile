@@ -6,7 +6,7 @@
 #    By: lvelasqu <lvelasqu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 12:29:27 by lvelasqu          #+#    #+#              #
-#    Updated: 2023/01/16 22:24:09 by lvelasqu         ###   ########.fr        #
+#    Updated: 2023/01/17 00:15:08 by lvelasqu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ comp: main.c ${NAME}
 	@$(CC) $(CFLAGS) main.c ${NAME} -o test
 	@./test
 
-.PHONY: all clean fclean re comp
+.PHONY: all clean fclean re comp epa
 
 
 	▀█████████▄     ▄████████ ███▄▄▄▄        ▄█  ▄█     ▄████████
